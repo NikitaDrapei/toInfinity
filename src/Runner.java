@@ -8,7 +8,7 @@ public class Runner {
         Scanner sc = new Scanner(System.in);
 
         int n;
-        double un = 0;
+        double un;
         System.out.println("Введите n");
         do {
             n = sc.nextInt();
@@ -17,7 +17,7 @@ public class Runner {
 
         for (int i = 1; i <= n; i++) {//Стремитя к 0, точность до 6 знаков
             un = (1 / factorial(i)) * (factorialPlus(i));
-            System.out.print("При n = " +i+ ", un not format = " + un+"             ");
+            //System.out.print("При n = " +i+ ", un not format = " + un+"             ");
             BigDecimal doubleUn = new BigDecimal(un);//Округление до 6 знаков
             doubleUn = doubleUn.setScale(6, RoundingMode.DOWN);
 
@@ -42,7 +42,7 @@ public class Runner {
     }
 
     public static double factorialPlus(int n) {
-        double result = 1;
+        double result;
         double sum = 0;
         for (int i = 1; i <= n; i++) {
             result = 1;
